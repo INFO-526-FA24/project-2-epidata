@@ -1,0 +1,28 @@
+---
+title: "INFO 526 Project 2 Proposal"
+author: 
+  - name: "Epidata"
+    affiliations:
+      - name: "College of Information Science, University of Arizona"
+description: "Proposal for the project of analyzing disease outbreaks with data visualizations"
+format: html
+editor: visual
+execute:
+  warning: false
+---
+
+
+```{r echo=FALSE}
+#| label: load-pkgs
+#| message: false
+library(tidyverse)
+```
+
+
+## Dataset
+
+
+
+## Topic
+
+

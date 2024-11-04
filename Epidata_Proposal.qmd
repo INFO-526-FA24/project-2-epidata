@@ -4,13 +4,12 @@ author:
   - name: "Epidata"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Proposal for the project of analyzing disease outbreaks with data visualizations"
+description: "Proposal for the project of exploring pandemics"
 format: html
 editor: visual
 execute:
   warning: false
 ---
-
 
 ```{r echo=FALSE}
 #| label: load-pkgs
@@ -18,11 +17,39 @@ execute:
 library(tidyverse)
 ```
 
+Use data visualizations to explore, compare and analyze several historically well-known pandemics.
 
-## Dataset
+## Goal Description
 
+The main goal of this project is to dive deeper into some significant pandemics from human history, including Yellow Fever Epidemic, Smallpox Epidemic, 1918 Influenza Pandemic, H1N1 Influenza and COVID-19. We are aware, to some extent, of the fact that these pandemics caused great loss and profoundly impacted human society in numerous ways. However, we want to use data visualizations to visually present and explore the similarities and differences among these pandemics that happened in different time periods. How fast did the infection spread? What were the mortality rates? Were there seasonal patterns? How were the economic impacted by these pandemics at the time? How long after news reported the disease did the pandemic outbreaks happen on a large scale? These are some potential questions we could explore in this project.
 
+Here are some proposed tasks that we plan to implement in this project:
 
-## Topic
+-   (Task 1) For each pandemic, we will use a stream graph to plot infected counts and death counts with time. The infected counts will be the upper part and the death counts will be the lower part, with x-axis being the timeline. We could see how fatal the disease was at that time.
 
+-   (Task 2) For each pandemic, we will use R to create a Shiny app to implement a slidebar to slide through the time period affected by this pandemic, with each specific time corresponding to a heatmap that depicts the infected areas in the world map. We could therefore visualize the geographical spread of the pandemic as time went by.
 
+-   (Task 3) Explore the time difference between when the news or articles discussed about the pandemic came out and when the pandemic outbreaks actually happened in larger scale. This step will only apply to those pandemics in modern days when there were recorded news media.
+
+-   (Task 4) For each pandemic, we will use a radar chart to present the pandemic variables, such as incubation period, mortality rate, and illness duration. We could understand the differences in the conditions among different pandemics.
+
+## Weekly Schedule
+
+| Task Name                              | Status   | Assignee                   | Due   | Priority | Summary                                            |
+|-------------|------------|------------|------------|------------|------------|
+| Proposal                               | Finished | Yitian, Li, Meghana, Rohit | 11/10 | Done     | Finish proposal and upload to GitHub repo          |
+| Peer review for proposal               | To do    | Yitian, Li, Meghana, Rohit | 11/13 | High     | Do peer review in class                            |
+| Revised proposal for instructor review | To do    | Yitian, Li, Meghana, Rohit | 11/18 | High     | Revise proposal according to peer review feedbacks |
+| Task 1                                 | To do    | Yitian                     | 11/24 | Medium   | Finish task 1                                      |
+| Task 2                                 | To do    | Meghana                    | 11/24 | Medium   | Finish task 2                                      |
+| Task 3                                 | To do    | Li                         | 11/24 | Medium   | Finish task 3                                      |
+| Task 4                                 | To do    | Rohit                      | 11/24 | Medium   | Finish task 4                                      |
+| Poster                                 | To do    | Yitian, Li, Meghana, Rohit | 11/30 | Low      | Finish design poster for iShowcase presentation    |
+| Peer review for poster                 | To do    | Yitian, Li, Meghana, Rohit | 12/4  | Low      | Do peer review in class                            |
+| Presentation slides                    | To do    | Yitian, Li, Meghana, Rohit | 12/6  | Low      | Finish writing the slides for presentation         |
+| iShowcase presentation                 | To do    | Yitian, Li, Meghana, Rohit | 12/11 | Low      | Do iShowcase presentation                          |
+| Write-up                               | To do    | Yitian, Li, Meghana, Rohit | 12/13 | Low      | Finish write-up                                    |
+
+## Project Repository
+
+The project repository contains a proposal file, a presentation slides, a writeup file, and a folder named datasets, which is currently empty and will be added all the datasets we use in this project in the process of our project.

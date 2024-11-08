@@ -1,0 +1,15 @@
+---
+title: "About"
+format: html
+editor: visual
+---
+
+This project was developed by \*\*Epidata\*\* For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona. The team is comprised of the following team members.
+
+-   Team member 1: Meghana Maringanti, Masters in Data Science , Year-1
+
+-   Team member 2: Yitian Qian, Masters in Data Science, Year-1
+
+-   Team member 3: Li Mi, Masters in Data Science, Year-1
+
+-   Team member 4:

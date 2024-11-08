@@ -33,6 +33,12 @@ Here are some proposed tasks that we plan to implement in this project:
 
 -   (Task 4) For each pandemic, we will use a radar chart to present the pandemic variables, such as incubation period, mortality rate, and illness duration, etc. We could understand the differences in the conditions among different pandemics.
 
+## Data Collection/Manipulation
+
+### Data Sources
+
+The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Dengue Fever—that have had profound impacts on public health, societal norms, and the global economy. The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). The [Dengue Fever dataset](https://worldhealthorg.shinyapps.io/dengue_global/) contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analyses, such as underreporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.
+
 ## Weekly Schedule
 
 | Task Name                              | Status   | Assignee                   | Due   | Priority | Summary                                            |

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -82,23 +82,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="project-title-a-comparative-analysis-of-historical-pandemics-through-data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="project-title-a-comparative-analysis-of-historical-pandemics-through-data-visualization">Project Title: A Comparative Analysis of Historical Pandemics through Data Visualization</h2>
 <p>Use data visualizations to explore, compare and analyze several historically well-known pandemics.</p>
+</section>
 <section id="goal-description" class="level2">
 <h2 class="anchored" data-anchor-id="goal-description">Goal Description</h2>
 <p>The main goal of this project is to dive deeper into some significant pandemics from human history, including Cholera, Dengue, and COVID-19. We are aware, to some extent, of the fact that these pandemics or diseases caused great loss and profoundly impacted human society in numerous ways. However, we want to use data visualizations to visually present and explore the similarities and differences among these pandemics or diseases that happened in large scale in different time periods. How fast did the infection spread? What were the mortality rates? Were there seasonal patterns? How were the economic impacted by these pandemics at the time? How long after news reported the disease did the pandemic outbreaks happen on a large scale? These are some potential questions we could explore in this project.</p>
-<p>Here are some proposed tasks that we plan to implement in this project:</p>
+</section>
+<section id="research-questions-and-expected-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="research-questions-and-expected-visualizations">Research Questions and Expected Visualizations</h2>
 <ul>
-<li><p>(Task 1) For each pandemic, we will use a stream graph to plot infected counts and death counts with time. The infected counts will be the upper part and the death counts will be the lower part, with x-axis being the timeline. We could see how fatal the disease was at that time.</p></li>
-<li><p>(Task 2) For each pandemic, we will use R to create a Shiny app to implement a slidebar to slide through the time period affected by this pandemic, with each specific time corresponding to a heatmap that depicts the infected areas in the world map. We could therefore visualize the geographical spread of the pandemic as time went by.</p></li>
-<li><p>(Task 3) Explore the time difference between when the news or articles discussed about the pandemic came out and when the pandemic outbreaks actually happened in larger scale. This step will only apply to those pandemics in modern days when there were recorded news media.</p></li>
-<li><p>(Task 4) For each pandemic, we will use a radar chart to present the pandemic variables, such as incubation period, mortality rate, and illness duration, etc. We could understand the differences in the conditions among different pandemics.</p></li>
+<li><p>Question 1: How did infection and mortality rates change over time for each pandemic?</p>
+<ul>
+<li><p>Visualization: For each pandemic, we will use a stream graph to plot infected counts and death counts with time. The infected counts will be the upper part and the death counts will be the lower part, with x-axis being the timeline. We could see how fatal the disease was at that time.</p></li>
+<li><p>Reason: This visual will highlight each pandemic’s scale and fatality over time, making it easy to see trends and compare severity across pandemics.</p></li>
+</ul></li>
+<li><p>Question 2: How did each pandemic spread geographically over time?</p>
+<ul>
+<li><p>Visualization: For each pandemic, we will use R to create a Shiny app to implement a slidebar to slide through the time period affected by this pandemic, with each specific time corresponding to a heatmap that depicts the infected areas in the world map. We could therefore visualize the geographical spread of the pandemic as time went by.</p></li>
+<li><p>Reason: This allows us to visualize the pace and direction of each pandemic’s spread globally, helping us understand geographical reach and potential containment challenges.</p></li>
+</ul></li>
+<li><p>Question 3: Did news reports have any impact on the disease growth rates?</p>
+<ul>
+<li><p>Visualization: Use time series to see the disease growth rate and use scatter plot to understand the changes in disease growth rate before and after news reports. This step will only apply to those pandemics in modern days when there were recorded news media.</p></li>
+<li><p>Reason: This comparison can reveal the role of media in public awareness and response, helping assess if early media coverage affected outbreak management.</p></li>
+</ul></li>
+<li><p>Question 4: What are the differences in incubation period, mortality rate, and illness duration across pandemics?</p>
+<ul>
+<li><p>Visualization: For each pandemic, we will use a radar chart to present the pandemic variables, such as incubation period, mortality rate, and illness duration, etc. We could understand the differences in the conditions among different pandemics.</p></li>
+<li><p>Reason: Radar charts provide a clear, at-a-glance comparison of key factors, offering insight into each pandemic’s unique characteristics and public health challenges.</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="data-collectionmanipulation" class="level2">
 <h2 class="anchored" data-anchor-id="data-collectionmanipulation">Data Collection/Manipulation</h2>
 <section id="data-sources" class="level3">
 <h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
-<p>The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Dengue Fever—that have had profound impacts on public health, societal norms, and the global economy. The <a href="https://data.who.int/dashboards/covid19/data">COVID-19 dataset</a> provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. The <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/">Cholera dataset</a> includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). The <a href="https://worldhealthorg.shinyapps.io/dengue_global/">Dengue Fever dataset</a> contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analyses, such as underreporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.</p>
+<p>The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Dengue Fever—that have had profound impacts on public health, societal norms, and the global economy.</p>
+<p>The <a href="https://data.who.int/dashboards/covid19/data">COVID-19 dataset</a> provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions.</p>
+<p>The <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/">Cholera dataset</a> includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR).</p>
+<p>The <a href="https://worldhealthorg.shinyapps.io/dengue_global/">Dengue Fever dataset</a> contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity.</p>
+<p>While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analyses, such as under-reporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.</p>
+</section>
+<section id="data-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
+<p>We will be handling missing data and rename columns in all three datasets to follow a consistent format. We will modify the values of time columns to be in the year-month-date format. We will segment the time periods as required.</p>
 </section>
 </section>
 <section id="weekly-schedule" class="level2">
@@ -264,18 +293,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -307,7 +325,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -315,7 +355,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

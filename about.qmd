@@ -12,4 +12,4 @@ This project was developed by \*\*Epidata\*\* For [INFO 526 - Data Analysis and 
 
 -   Team member 3: Li Mi, Masters in Data Science, Year-1
 
--   Team member 4:
+-   Team member 4: Rohit Surya AVB, Masters in Information Science, Year-2

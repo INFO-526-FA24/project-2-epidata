@@ -57,13 +57,59 @@ The main goal of this project is to dive deeper into some significant pandemics 
 
 The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Dengue Fever—that have had profound impacts on public health, societal norms, and the global economy.
 
-The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions.
+The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. This dataset consists of 422,160 rows and 8 columns of records.
 
-The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR).
+|                   |           |                                                                     |
+|----------------|----------|----------------------------------------------|
+| **Variable**      | **Type**  | **Description**                                                     |
+| Date_reported     | Character | The date on which the data was reported in YYYY-MM-DD format        |
+| Country_code      | Character | The ISO code of the country                                         |
+| Country           | Character | Full name of the country                                            |
+| WHO_region        | Character | WHO region classification of the country                            |
+| New_cases         | Numeric   | The number of new COVID-19 cases reported on the given date         |
+| Cumulative_cases  | Numeric   | The total number of  COVID-19 cases reported up to  the given date  |
+| New_deaths        | Numeric   | The number of new COVID-19 deaths reported on the given date        |
+| Cumulative_deaths | Numeric   | The total number of  COVID-19 deaths reported up to  the given date |
 
-The [Dengue Fever dataset](https://worldhealthorg.shinyapps.io/dengue_global/) contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity.
+The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). This dataset consists of 1,094 rows and 12 columns of records.
 
-While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analyses, such as under-reporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.
+| **Variable**              | **Type**  | **Description**                                                                               |
+|---------------------|----------|------------------------------------------|
+| Country                   | Character | Name of the country where cases are reported                                                  |
+| GTFCC_Target_Country      | Character | Indicates whether the country is a target of the Global Task Force on Cholera Control (GTFCC) |
+| Continent                 | Character | Continent to which the country belongs                                                        |
+| WHO_Region                | Character | World Health Organization(WHO) regional classification of the country                         |
+| Subregion                 | Character | Subregional classification within the WHO region                                              |
+| Year                      | Numeric   | Year in which the cases were recorded                                                         |
+| Total_Cases               | Numeric   | Total number of cholera cases reported                                                        |
+| Autochtonous_Cases        | Numeric   | Number of cholera cases originating within the country                                        |
+| Imported_Cases            | Numeric   | Number of cholera cases imported from other countries                                         |
+| Deaths                    | Numeric   | Number of deaths caused by cholera                                                            |
+| CFR                       | Numeric   | Case Fatality rate, representing the percentage of cases that resulted in death               |
+| Incidence_Rate_perMillion | Numeric   | Cholera incidence rate per million people                                                     |
+
+The [Dengue Fever dataset](https://worldhealthorg.shinyapps.io/dengue_global/) contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. This dataset consists of 7,862 rows and 16 columns of records.
+
+| **Variable**      | **Type**  | **Description**                                                                                                             |
+|----------------|----------|----------------------------------------------|
+| date              | Numeric   | Date of entried record                                                                                                      |
+| date_lab          | Character | Date displayed in string                                                                                                    |
+| who_region        | Character | World Health Organisation (WHO) region code                                                                                 |
+| who_region_long   | Character | Complete name of the WHO region                                                                                             |
+| country           | Character | Name of the country                                                                                                         |
+| iso3              | Character | This represents the ISO3 country code                                                                                       |
+| cases             | Numeric   | Total number of reported cases                                                                                              |
+| confirmed_cases   | Numeric   | Total number of confirmed cases                                                                                             |
+| severe_cases      | Numeric   | The number of newly reported several cases                                                                                  |
+| deaths            | Numeric   | The number of newly reported deaths                                                                                         |
+| cfr               | Numeric   | Case fatality ratio (CFR) is the ratio of the total number of deaths to the total number of cases in the same period        |
+| prop_sev          | Numeric   | Proportion of severe cases is the ratio of the total number of severe cases to the total number of cases in the same period |
+| cfr_ci_lower      | Numeric   | The lower bound of confidence interval of case fatality ratio                                                               |
+| cfr_ci_upper      | Numeric   | The upper bound of confidence interval of fatality ratio                                                                    |
+| prop_sev_ci_lower | Numeric   | The lower bound of confidence interval of proportion of severe cases                                                        |
+| prop_sev_ci_upper | Numeric   | The upper bound of confidence interval of proportion of severe cases                                                        |
+
+While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analysis, such as under-reporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.
 
 ### Data Cleaning
 
@@ -71,21 +117,21 @@ We will be handling missing data and rename columns in all three datasets to fol
 
 ## Weekly Schedule
 
-| Task Name | Status | Assignee | Due | Priority | Summary |
+| Task Name                              | Status   | Assignee                   | Due   | Priority | Summary                                            |
 |------------|------------|------------|------------|------------|------------|
-| Proposal | Finished | Yitian, Li, Meghana, Rohit | 11/10 | Done | Finish proposal and upload to GitHub repo |
-| Peer review for proposal | To do | Yitian, Li, Meghana, Rohit | 11/13 | High | Do peer review in class |
-| Revised proposal for instructor review | To do | Yitian, Li, Meghana, Rohit | 11/18 | High | Revise proposal according to peer review feedbacks |
-| Task 1 | To do | Yitian | 11/24 | Medium | Finish task 1 |
-| Task 2 | To do | Meghana | 11/24 | Medium | Finish task 2 |
-| Task 3 | To do | Li | 11/24 | Medium | Finish task 3 |
-| Task 4 | To do | Rohit | 11/24 | Medium | Finish task 4 |
-| Poster | To do | Yitian, Li, Meghana, Rohit | 11/30 | Low | Finish design poster for iShowcase presentation |
-| Peer review for poster | To do | Yitian, Li, Meghana, Rohit | 12/4 | Low | Do peer review in class |
-| Presentation slides | To do | Yitian, Li, Meghana, Rohit | 12/6 | Low | Finish writing the slides for presentation |
-| iShowcase presentation | To do | Yitian, Li, Meghana, Rohit | 12/11 | Low | Do iShowcase presentation |
-| Write-up | To do | Yitian, Li, Meghana, Rohit | 12/13 | Low | Finish write-up |
+| Proposal                               | Finished | Yitian, Li, Meghana, Rohit | 11/10 | Done     | Finish proposal and upload to GitHub repo          |
+| Peer review for proposal               | Finished | Yitian, Li, Meghana, Rohit | 11/13 | Done     | Do peer review in class                            |
+| Revised proposal for instructor review | Finished | Yitian, Li, Meghana, Rohit | 11/18 | Done     | Revise proposal according to peer review feedbacks |
+| Task 1                                 | To do    | Yitian                     | 11/24 | High     | Finish task 1                                      |
+| Task 2                                 | To do    | Meghana                    | 11/24 | High     | Finish task 2                                      |
+| Task 3                                 | To do    | Li                         | 11/24 | High     | Finish task 3                                      |
+| Task 4                                 | To do    | Rohit                      | 11/24 | High     | Finish task 4                                      |
+| Poster                                 | To do    | Yitian, Li, Meghana, Rohit | 11/30 | Medium   | Finish design poster for iShowcase presentation    |
+| Peer review for poster                 | To do    | Yitian, Li, Meghana, Rohit | 12/4  | Low      | Do peer review in class                            |
+| Presentation slides                    | To do    | Yitian, Li, Meghana, Rohit | 12/6  | Low      | Finish writing the slides for presentation         |
+| iShowcase presentation                 | To do    | Yitian, Li, Meghana, Rohit | 12/11 | Low      | Do iShowcase presentation                          |
+| Write-up                               | To do    | Yitian, Li, Meghana, Rohit | 12/13 | Low      | Finish write-up                                    |
 
 ## Project Repository
 
-The project repository contains a proposal file, a presentation slides, a writeup file, and a folder named datasets, which is currently empty and will be added all the datasets we use in this project in the process of our project.
+The project repository contains a proposal file, a presentation slides, a writeup file, an about file, and a folder named datasets, which contains three datasets that we are planning to use in this project.

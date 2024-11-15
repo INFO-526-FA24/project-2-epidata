@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -120,10 +120,236 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-sources" class="level3">
 <h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
 <p>The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Dengue Fever—that have had profound impacts on public health, societal norms, and the global economy.</p>
-<p>The <a href="https://data.who.int/dashboards/covid19/data">COVID-19 dataset</a> provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions.</p>
-<p>The <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/">Cholera dataset</a> includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR).</p>
-<p>The <a href="https://worldhealthorg.shinyapps.io/dengue_global/">Dengue Fever dataset</a> contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity.</p>
-<p>While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analyses, such as under-reporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.</p>
+<p>The <a href="https://data.who.int/dashboards/covid19/data">COVID-19 dataset</a> provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. This dataset consists of 422,160 rows and 8 columns of records.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 13%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td>Date_reported</td>
+<td>Character</td>
+<td>The date on which the data was reported in YYYY-MM-DD format</td>
+</tr>
+<tr class="odd">
+<td>Country_code</td>
+<td>Character</td>
+<td>The ISO code of the country</td>
+</tr>
+<tr class="even">
+<td>Country</td>
+<td>Character</td>
+<td>Full name of the country</td>
+</tr>
+<tr class="odd">
+<td>WHO_region</td>
+<td>Character</td>
+<td>WHO region classification of the country</td>
+</tr>
+<tr class="even">
+<td>New_cases</td>
+<td>Numeric</td>
+<td>The number of new COVID-19 cases reported on the given date</td>
+</tr>
+<tr class="odd">
+<td>Cumulative_cases</td>
+<td>Numeric</td>
+<td>The total number of&nbsp; COVID-19 cases reported up to&nbsp; the given date</td>
+</tr>
+<tr class="even">
+<td>New_deaths</td>
+<td>Numeric</td>
+<td>The number of new COVID-19 deaths reported on the given date</td>
+</tr>
+<tr class="odd">
+<td>Cumulative_deaths</td>
+<td>Numeric</td>
+<td>The total number of&nbsp; COVID-19 deaths reported up to&nbsp; the given date</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/">Cholera dataset</a> includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). This dataset consists of 1,094 rows and 12 columns of records.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 13%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Country</td>
+<td>Character</td>
+<td>Name of the country where cases are reported&nbsp;</td>
+</tr>
+<tr class="even">
+<td>GTFCC_Target_Country</td>
+<td>Character</td>
+<td>Indicates whether the country is a target of the Global Task Force on Cholera Control (GTFCC)</td>
+</tr>
+<tr class="odd">
+<td>Continent</td>
+<td>Character</td>
+<td>Continent to which the country belongs</td>
+</tr>
+<tr class="even">
+<td>WHO_Region</td>
+<td>Character</td>
+<td>World Health Organization(WHO) regional classification of the country&nbsp;</td>
+</tr>
+<tr class="odd">
+<td>Subregion</td>
+<td>Character</td>
+<td>Subregional classification within the WHO region</td>
+</tr>
+<tr class="even">
+<td>Year</td>
+<td>Numeric</td>
+<td>Year in which the cases were recorded&nbsp;</td>
+</tr>
+<tr class="odd">
+<td>Total_Cases</td>
+<td>Numeric</td>
+<td>Total number of cholera cases reported&nbsp;</td>
+</tr>
+<tr class="even">
+<td>Autochtonous_Cases</td>
+<td>Numeric</td>
+<td>Number of cholera cases originating within the country&nbsp;</td>
+</tr>
+<tr class="odd">
+<td>Imported_Cases</td>
+<td>Numeric</td>
+<td>Number of cholera cases imported from other countries</td>
+</tr>
+<tr class="even">
+<td>Deaths</td>
+<td>Numeric</td>
+<td>Number of deaths caused by cholera</td>
+</tr>
+<tr class="odd">
+<td>CFR</td>
+<td>Numeric</td>
+<td>Case Fatality rate, representing the percentage of cases that resulted in death</td>
+</tr>
+<tr class="even">
+<td>Incidence_Rate_perMillion</td>
+<td>Numeric</td>
+<td>Cholera incidence rate per million people</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://worldhealthorg.shinyapps.io/dengue_global/">Dengue Fever dataset</a> contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. This dataset consists of 7,862 rows and 16 columns of records.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 13%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Variable</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>date</td>
+<td>Numeric</td>
+<td>Date of entried record</td>
+</tr>
+<tr class="even">
+<td>date_lab</td>
+<td>Character</td>
+<td>Date displayed in string</td>
+</tr>
+<tr class="odd">
+<td>who_region</td>
+<td>Character</td>
+<td>World Health Organisation (WHO) region code</td>
+</tr>
+<tr class="even">
+<td>who_region_long</td>
+<td>Character</td>
+<td>Complete name of the WHO region</td>
+</tr>
+<tr class="odd">
+<td>country</td>
+<td>Character</td>
+<td>Name of the country</td>
+</tr>
+<tr class="even">
+<td>iso3</td>
+<td>Character</td>
+<td>This represents the ISO3 country code</td>
+</tr>
+<tr class="odd">
+<td>cases</td>
+<td>Numeric</td>
+<td>Total number of reported cases</td>
+</tr>
+<tr class="even">
+<td>confirmed_cases</td>
+<td>Numeric</td>
+<td>Total number of confirmed cases</td>
+</tr>
+<tr class="odd">
+<td>severe_cases</td>
+<td>Numeric</td>
+<td>The number of newly reported several cases</td>
+</tr>
+<tr class="even">
+<td>deaths</td>
+<td>Numeric</td>
+<td>The number of newly reported deaths</td>
+</tr>
+<tr class="odd">
+<td>cfr</td>
+<td>Numeric</td>
+<td>Case fatality ratio (CFR) is the ratio of the total number of deaths to the total number of cases in the same period</td>
+</tr>
+<tr class="even">
+<td>prop_sev</td>
+<td>Numeric</td>
+<td>Proportion of severe cases is the ratio of the total number of severe cases to the total number of cases in the same period</td>
+</tr>
+<tr class="odd">
+<td>cfr_ci_lower</td>
+<td>Numeric</td>
+<td>The lower bound of confidence interval of case fatality ratio</td>
+</tr>
+<tr class="even">
+<td>cfr_ci_upper</td>
+<td>Numeric</td>
+<td>The upper bound of confidence interval of fatality ratio</td>
+</tr>
+<tr class="odd">
+<td>prop_sev_ci_lower</td>
+<td>Numeric</td>
+<td>The lower bound of confidence interval of proportion of severe cases</td>
+</tr>
+<tr class="even">
+<td>prop_sev_ci_upper</td>
+<td>Numeric</td>
+<td>The upper bound of confidence interval of proportion of severe cases</td>
+</tr>
+</tbody>
+</table>
+<p>While these WHO-sourced datasets are generally reliable, they come with limitations that may impact analysis, such as under-reporting in areas with limited healthcare infrastructure and inconsistencies in case definitions and reporting practices across countries. The temporal resolution also varies—some datasets are aggregated annually, others monthly or daily—requiring harmonization in subsequent processing to ensure consistency in analyses.</p>
 </section>
 <section id="data-cleaning" class="level3">
 <h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
@@ -162,18 +388,18 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Peer review for proposal</td>
-<td>To do</td>
+<td>Finished</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>11/13</td>
-<td>High</td>
+<td>Done</td>
 <td>Do peer review in class</td>
 </tr>
 <tr class="odd">
 <td>Revised proposal for instructor review</td>
-<td>To do</td>
+<td>Finished</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>11/18</td>
-<td>High</td>
+<td>Done</td>
 <td>Revise proposal according to peer review feedbacks</td>
 </tr>
 <tr class="even">
@@ -181,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Yitian</td>
 <td>11/24</td>
-<td>Medium</td>
+<td>High</td>
 <td>Finish task 1</td>
 </tr>
 <tr class="odd">
@@ -189,7 +415,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Meghana</td>
 <td>11/24</td>
-<td>Medium</td>
+<td>High</td>
 <td>Finish task 2</td>
 </tr>
 <tr class="even">
@@ -197,7 +423,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Li</td>
 <td>11/24</td>
-<td>Medium</td>
+<td>High</td>
 <td>Finish task 3</td>
 </tr>
 <tr class="odd">
@@ -205,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Rohit</td>
 <td>11/24</td>
-<td>Medium</td>
+<td>High</td>
 <td>Finish task 4</td>
 </tr>
 <tr class="even">
@@ -213,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>11/30</td>
-<td>Low</td>
+<td>Medium</td>
 <td>Finish design poster for iShowcase presentation</td>
 </tr>
 <tr class="odd">
@@ -253,7 +479,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="project-repository" class="level2">
 <h2 class="anchored" data-anchor-id="project-repository">Project Repository</h2>
-<p>The project repository contains a proposal file, a presentation slides, a writeup file, and a folder named datasets, which is currently empty and will be added all the datasets we use in this project in the process of our project.</p>
+<p>The project repository contains a proposal file, a presentation slides, a writeup file, an about file, and a folder named datasets, which contains three datasets that we are planning to use in this project.</p>
 </section>
 
 </main>
@@ -293,7 +519,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -325,29 +562,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -355,7 +570,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -123,9 +123,9 @@ ul.task-list li input[type="checkbox"] {
 <p>The <a href="https://data.who.int/dashboards/covid19/data">COVID-19 dataset</a> provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. This dataset consists of 422,160 rows and 8 columns of records.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 13%">
-<col style="width: 63%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -178,9 +178,9 @@ ul.task-list li input[type="checkbox"] {
 <p>The <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/">Cholera dataset</a> includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). This dataset consists of 1,094 rows and 12 columns of records.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 28%">
-<col style="width: 13%">
-<col style="width: 57%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -255,9 +255,9 @@ ul.task-list li input[type="checkbox"] {
 <p>The <a href="https://worldhealthorg.shinyapps.io/dengue_global/">Dengue Fever dataset</a> contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. This dataset consists of 7,862 rows and 16 columns of records.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 13%">
-<col style="width: 63%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -356,6 +356,40 @@ ul.task-list li input[type="checkbox"] {
 <p>We will be handling missing data and rename columns in all three datasets to follow a consistent format. We will modify the values of time columns to be in the year-month-date format. We will segment the time periods as required.</p>
 </section>
 </section>
+<section id="poster-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="poster-ideas">Poster Ideas</h2>
+<p>Here is the outline for our poster.</p>
+<ul>
+<li><p>Introduction</p>
+<ul>
+<li>Briefly state the project topic</li>
+</ul></li>
+<li><p>Background</p>
+<ul>
+<li><p>Introduce the background of epidemics that we explore in this project</p></li>
+<li><p>State the reason why we are interested in analyzing these epideics</p></li>
+</ul></li>
+<li><p>Tasks</p>
+<ul>
+<li><p>Each task has a subsection</p></li>
+<li><p>For each subsection, post the key visualizations and write a few sentences to interpret them</p></li>
+</ul></li>
+<li><p>Conclusions</p>
+<ul>
+<li><p>Summarize the similarities and differences among these epidemics</p></li>
+<li><p>State the meaning of our project, such as handling future epidemics</p></li>
+</ul></li>
+<li><p>Future Directions</p>
+<ul>
+<li><p>Discuss how we can improve on the visualizations or approaches, such as possible additions</p></li>
+<li><p>Discuss what other epidemics that we did not explore in this project but are interested in exploring them in future opportunities</p></li>
+</ul></li>
+<li><p>References</p>
+<ul>
+<li>List the references for this project, such as the links to the datasets</li>
+</ul></li>
+</ul>
+</section>
 <section id="weekly-schedule" class="level2">
 <h2 class="anchored" data-anchor-id="weekly-schedule">Weekly Schedule</h2>
 <table class="caption-top table">
@@ -439,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>11/30</td>
-<td>Medium</td>
+<td>High</td>
 <td>Finish design poster for iShowcase presentation</td>
 </tr>
 <tr class="odd">
@@ -455,7 +489,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>12/6</td>
-<td>Low</td>
+<td>Medium</td>
 <td>Finish writing the slides for presentation</td>
 </tr>
 <tr class="odd">
@@ -463,7 +497,7 @@ ul.task-list li input[type="checkbox"] {
 <td>To do</td>
 <td>Yitian, Li, Meghana, Rohit</td>
 <td>12/11</td>
-<td>Low</td>
+<td>Medium</td>
 <td>Do iShowcase presentation</td>
 </tr>
 <tr class="even">
@@ -519,18 +553,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -562,7 +585,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -570,7 +615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

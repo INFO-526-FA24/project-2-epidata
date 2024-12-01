@@ -60,7 +60,7 @@ The datasets focus on three major disease outbreaks—COVID-19, Cholera, and Den
 The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. This dataset consists of 422,160 rows and 8 columns of records.
 
 |  |  |  |
-|------------------|------------------|-------------------------------------|
+|------------------|------------------|------------------------------------|
 | **Variable** | **Type** | **Description** |
 | Date_reported | Character | The date on which the data was reported in YYYY-MM-DD format |
 | Country_code | Character | The ISO code of the country |
@@ -74,7 +74,7 @@ The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides da
 The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). This dataset consists of 1,094 rows and 12 columns of records.
 
 | **Variable** | **Type** | **Description** |
-|------------------|------------------|------------------------------------|
+|------------------|------------------|-----------------------------------|
 | Country | Character | Name of the country where cases are reported  |
 | GTFCC_Target_Country | Character | Indicates whether the country is a target of the Global Task Force on Cholera Control (GTFCC) |
 | Continent | Character | Continent to which the country belongs |
@@ -91,7 +91,7 @@ The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) i
 The [Dengue Fever dataset](https://worldhealthorg.shinyapps.io/dengue_global/) contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. This dataset consists of 7,862 rows and 16 columns of records.
 
 | **Variable** | **Type** | **Description** |
-|------------------|------------------|-------------------------------------|
+|------------------|------------------|------------------------------------|
 | date | Numeric | Date of entried record |
 | date_lab | Character | Date displayed in string |
 | who_region | Character | World Health Organisation (WHO) region code |
@@ -159,7 +159,7 @@ Here is the outline for our poster.
 | Peer review for proposal | Finished | Yitian, Li, Meghana, Rohit | 11/13 | Done | Do peer review in class |
 | Revised proposal for instructor review | Finished | Yitian, Li, Meghana, Rohit | 11/18 | Done | Revise proposal according to peer review feedbacks |
 | Task 1 | To do | Yitian | 11/24 | High | Finish task 1 |
-| Task 2 | To do | Meghana | 11/24 | High | Finish task 2 |
+| Task 2 | To do | Meghana | 12/2 | High | Finish task 2 |
 | Task 3 | To do | Li | 11/24 | High | Finish task 3 |
 | Task 4 | To do | Rohit | 11/24 | High | Finish task 4 |
 | Poster | To do | Yitian, Li, Meghana, Rohit | 11/30 | High | Finish design poster for iShowcase presentation |

@@ -43,6 +43,8 @@ cholera_long = cholera_aggregated %>%
 
 head(cholera_long, 5)
 
+cholera_count_order = cholera_long[order(abs(cholera_long$Counts),decreasing = TRUE),]
+
 # create stream graph using ggplot
 ggplot() + 
   geom_area(data = cholera_long, 

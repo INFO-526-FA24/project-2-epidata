@@ -173,7 +173,7 @@ ggplot() +
   annotate("text", x = 171, y = -2744539, label = "Mar 2024, 2.74M Cases", size = 2, color = "darkblue") +
   annotate("text", x = 172, y = -2663048, label = "Apr 2024, 2.66M Cases", size = 2, color = "darkblue") +
   annotate("text", x = 173, y = -2101896, label = "May 2024, 2.10M Cases", size = 2, color = "darkblue") +
-  annotate("text", x = 174, y = -694549, label = "May 2024, 0.69M Cases", size = 2, color = "darkblue") +
+  annotate("text", x = 174, y = -694549, label = "June 2024, 0.69M Cases", size = 2, color = "darkblue") +
   annotate("text", x = 170, y = -2048271, label = "Feb 2024, 2.05M Cases", size = 2, color = "darkblue") +
   annotate("text", x = 169, y = -1096384, label = "Jan 2024, 1.10M Cases", size = 2, color = "darkblue") +
   annotate("text", x = 159, y = -840000, label = "Mar 2023, 0.82M Cases", size = 2, color = "darkblue") +

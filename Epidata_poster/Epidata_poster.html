@@ -107,9 +107,9 @@ a:active {
 color: #cc0000;
 }
 .poster_body {
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count: 3; /* Firefox */
-column-count: 3;
+-webkit-column-count: 4; /* Chrome, Safari, Opera */
+-moz-column-count: 4; /* Firefox */
+column-count: 4;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
@@ -283,7 +283,7 @@ font-size: 20pt;
 <!-- Poster Title -->
 <div class= "poster_title">
 <h1 id="title">A Comparative Analysis of Historical Pandemics through Data Visualization</h1>
-<h3 id="author">Yitian Qian<sup></sup>, Li Mi<sup></sup>, Meghana Maringanti<sup></sup>, Rohit Surya<sup></sup></h3><br>
+<h3 id="author">Epidata —— Yitian Qian, Li Mi, Meghana Maringanti, Rohit Surya<sup></sup></h3><br>
 
 </div>
 <!-- Right Logo  -->
@@ -295,14 +295,14 @@ font-size: 20pt;
 <div class='poster_body'>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>We use data visualizations to dive into the statistics of some significant pandemics from human history, including Cholera, Dengue, and COVID-19. We visually present and explore the similarities and differences among these pandemics or diseases that happened in large scale in different time periods.</p>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+<p>We use data visualizations to dive into some significant pandemics from human history, including Cholera, Dengue, and COVID-19, exploring the similarities and differences among these pandemics that happened in large scale in different time periods.</p>
+<div id="objectives" class="section level3">
+<h3>Objectives</h3>
 <ol style="list-style-type: decimal">
-<li>Use stream graphs to visualize total cases and deaths over time.</li>
-<li>Use Shiny app to display geographical spread of pandemics over time.</li>
-<li>Use time series and scatter plot to detect changes in disease growth rate before and after news reports.</li>
-<li>Use radar charts to display the differences in incubation period, mortality rate, and illness duration across pandemics.</li>
+<li>Visualize total cases and deaths over time.</li>
+<li>Display geographical spread of pandemics.</li>
+<li>Detect changes in disease growth rate with numbers of news reports.</li>
+<li>Display the differences in incubation period, mortality rate, and illness duration.</li>
 </ol>
 </div>
 </div>
@@ -316,76 +316,69 @@ font-size: 20pt;
 </div>
 <div id="exploration" class="section level1">
 <h1>Exploration</h1>
-<div id="total-cases-and-deaths-over-time" class="section level2">
-<h2>Total cases and deaths over time</h2>
+<div id="total-cases-and-deaths-over-time" class="section level3">
+<h3>Total cases and deaths over time</h3>
 <p><img src="cholera_stream.png" style="width:32.0%" /> <img src="dengue_stream.png" style="width:32.0%" /> <img src="covid_stream.png" style="width:32.0%" /></p>
-<p>The stream graphs display the local peak values for cases of infected and deaths over time for three pandemics. Cholera dataset includes global cases officially reported to WHO from 2000 to 2023. Dengue dataset includes global cases from WHO Global dengue surveillance from 2010 to 2024. COVID-19 dataset includes global cases from WHO COVID-19 dashboard data from 2020 to 2024.</p>
 <ul>
-<li><p>For Cholera, there were huge outbreaks in years 2011, 2017, 2019 and 2023, all of which had total cases over 0.5 million. The years with highest numbers of deaths are 2006, 2008, 2010, 2011 and 2017, all of which exceeded 5000 deaths.</p></li>
-<li><p>For Dengue, there were huge outbreaks in periods of March 2016, May 2019, March 2023 to May 2023 and January 2024 to June 2024, all of which had monthly total cases over 0.60 million. The periods with highest numbers of deaths are months February 2024 to May 2024, all of which exceeded monthly 1000 deaths.</p></li>
-<li><p>For COVID-19, there were huge outbreaks in periods of January 2022 to March 2022, July 2022 and December 2022, all of which had monthly total cases over 30 million. The periods with highest numbers of deaths are months December 2020 to February 2021, April 2021 to May 2021 and August 2021, all of which exceeded monthly 0.30 million deaths. Some of these numbers of deaths even exceeded the number of monthly new cases since February 2024.</p></li>
+<li>The stream graphs display the local peak values for cases of infected and deaths for three pandemics.</li>
+<li>For Cholera, there were huge outbreaks in years 2011, 2017, 2019 and 2023, each exceeding 0.5 million total cases yearly. The years with highest numbers of deaths are 2006, 2008, 2010, 2011 and 2017, each exceeding 5000 deaths yearly.</li>
+<li>For Dengue, there were huge outbreaks in periods of March 2016, May 2019, March 2023 to May 2023 and January 2024 to June 2024, each exceeding 0.60 million total cases monthly. The periods with highest numbers of deaths are months February 2024 to May 2024, each exceeding 1000 deaths monthly.</li>
+<li>For COVID-19, there were huge outbreaks in periods of January 2022 to March 2022, July 2022 and December 2022, each exceeding 30 million total cases monthly. The periods with highest numbers of deaths are months December 2020 to February 2021, April 2021 to May 2021 and August 2021, each exceeding 0.30 million deaths monthly.</li>
 </ul>
 </div>
-<div id="geographical-spread-of-pandemics-over-time" class="section level2">
-<h2>Geographical spread of pandemics over time</h2>
-<p>(insert plots from Meghana)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
+<div id="geographical-spread-of-pandemics-over-time" class="section level3">
+<h3>Geographical spread of pandemics over time</h3>
+<center>
+<img src="task2.jpeg" style="width:24cm;height:8cm" />
+</center>
+<ul>
+<li>The heat maps created in Shiny app reveal the geographical spread of three pandemics. Above is an example of COVID-19 for all years.</li>
+<li>COVID-19 (2020–2024) shows the highest case counts in regions like the United States, China, and India, with moderate to high cases across Europe, South America, and parts of Africa, while lower case counts are visible in less populated regions.</li>
+<li>Cholera (2000–2024) cases are most prominent in sub-Saharan Africa and parts of South Asia, with no significant spread in regions like North America and Europe.</li>
+<li>Dengue (2010–2024) shows the highest concentration in Brazil and South America, with moderate cases in tropical regions like Southeast Asia, Central America, and parts of Africa, while colder regions like Europe and Canada show minimal cases.</li>
+</ul>
 </div>
-<div id="news-reports-impact-on-pandemics-spread" class="section level2">
-<h2>News reports impact on pandemics spread</h2>
-<p>(insert plots from Li)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
+<div id="news-reports-impact-on-pandemics-spread" class="section level3">
+<h3>News reports impact on pandemics spread</h3>
+<center>
+<img src="task3.png" style="width:24cm;height:8cm" />
+</center>
+<ul>
+<li>The gray bars and gray line display the number of monthly news articles about COVID-19; the red line represents the monthly new cases of the infected. When the number of news releases rises significantly, the growth in the total number of cases is slowing down, most notably from April to May 2020.</li>
+<li>The growth rate of the number of news releases in April 2020 is 123.81%, while the growth rate of the total number of cases is only 26.34%. Meanwhile, the number of cases increased extremely rapidly from June to July 2020, with a growth rate of 89.01%, and the growth rate of news releases from June to July was only 8.55%.</li>
+<li>This interesting phenomenon may also suggest that the number of news releases in the early stages of the pandfemic was able to affect the number of new cases of infection to some extent.</li>
+</ul>
 </div>
-<div id="differences-in-disease-parameters" class="section level2">
-<h2>Differences in disease parameters</h2>
-<p>(insert plots from Surya)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
+<div id="differences-in-disease-parameters" class="section level3">
+<h3>Differences in disease parameters</h3>
+<p><img src="task4_1.png" style="width:48.0%" /> <img src="task4_2.png" style="width:48.0%" /> <img src="task4_3.png" style="width:48.0%" /> <img src="task4_4.png" style="width:48.0%" /></p>
+<ul>
+<li>COVID-19 exhibits the longest illness duration of 14 days and an intermediate incubation period of 5 days. Its mortality rate is 2.5%, which is relatively low compared to Cholera. Relatively lower values for mortality and incubation suggests prolonged disease management compared to the others.</li>
+<li>Cholera has the shortest incubation period of 2 days and the highest mortality rate of 5%, but its illness duration is 7 days, which is moderate. There is a spike in mortality rate compared to COVID-19. While this has a short incubation period, the mortality rate reflects how quickly it can impact populations, necessitating immediate intervention. Its high mortality demands urgent responses in outbreaks.</li>
+<li>Dengue features the longest incubation period of 7 days. Its mortality rate of 0.1% is the lowest among these three pandemics. Low mortality and moderate illness duration make it appear less severe when compared with Cholera and COVID-19. However, the longer incubation period suggests delayed symptom onset, which can complicate diagnosis.</li>
+</ul>
 </div>
 </div>
 <div id="conclusions" class="section level1">
 <h1>Conclusions</h1>
-<p>(Write down our observations from the plots here.) (For example, summarize the similarities and differences among these epidemics) (State the meaning of our project, such as handling future epidemics)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
+<ul>
+<li><p>Different epidemics have different types of outbreaks. Dengue pandemics occurred seasonally, mostly late spring to early summer. This is likely due to the propogation of Aedes mosquitoes during these periods, which are responsible for the spread of the dengue pandemics. Cholera epidemics outbreaks are closely related to contamination of water sources, which is associated with years with heavy rainfall and flooding. COVID-19 had higher mortality rate at the early stage of pandemics than at the late stage, likely due to the vaccine access at the late stage; the total infected cases had spiked at the late stage, likely due to the end of quarantine measure.</p></li>
+<li><p>The monthly number of news articles related to COVID-19 and the month total cases of infected COVID-19 are inversely correlated. It can be reasonably inferred that the news of COVID-19 helped raise people’s awareness of the pandemics, reminding people to sanitize frequently and reducing social contacts, which then indirectly reduced the number of total cases.</p></li>
+</ul>
 </div>
 <div id="future-directions" class="section level1">
 <h1>Future Directions</h1>
-<p>(Discuss how we can improve on the visualizations or approaches, such as possible additions) (Discuss what other epidemics that we did not explore in this project but are interested in exploring them in future opportunities)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
-<p>(space)</p>
+<ul>
+<li><p>Emphasize on the time stamps of each pandemics where there were huge outbreaks, and research on the reasons behind them.</p></li>
+<li><p>Research on pandemics other than Cholera, Dengue and COVID-19, and compare the results to find the differences and similarities. Summarize the methods to efficiently contain the spread of pandemics.</p></li>
+</ul>
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>
 <ul>
-<li><p>Cholera: <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/" class="uri">https://worldhealthorg.shinyapps.io/page10cholera_data/</a></p></li>
-<li><p>Dengue: <a href="https://worldhealthorg.shinyapps.io/dengue_global/" class="uri">https://worldhealthorg.shinyapps.io/dengue_global/</a></p></li>
-<li><p>COVID-19: <a href="https://data.who.int/dashboards/covid19/data" class="uri">https://data.who.int/dashboards/covid19/data</a></p></li>
+<li>Cholera: <a href="https://worldhealthorg.shinyapps.io/page10cholera_data/" class="uri">https://worldhealthorg.shinyapps.io/page10cholera_data/</a></li>
+<li>Dengue: <a href="https://worldhealthorg.shinyapps.io/dengue_global/" class="uri">https://worldhealthorg.shinyapps.io/dengue_global/</a></li>
+<li>COVID-19: <a href="https://data.who.int/dashboards/covid19/data" class="uri">https://data.who.int/dashboards/covid19/data</a></li>
 </ul>
 </div>
 </div>

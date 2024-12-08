@@ -148,8 +148,8 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 
 world_boundaries <- ne_countries(scale = "medium", returnclass = "sf")
-print("World boundaries naming conventions:")
-print(unique(world_boundaries$name))
+#print("World boundaries naming conventions:")
+#print(unique(world_boundaries$name))
 ```
 
 step 4.1: Standardize the Country names
@@ -195,7 +195,7 @@ Step 5.1: Define UI for the Shiny App
 
 ```{r}
 ui <- fluidPage(
-  titlePanel("Global Disease Cases Heatmap"),
+  titlePanel("Global Disease Spread - Heatmap"),
   sidebarLayout(
     sidebarPanel(
       selectInput("disease", "Select Disease:", 
@@ -217,7 +217,7 @@ Step 5.2: Define server logic
 ```{r}
 server <- function(input, output, session) {
 
-  # Update year options based on selected disease
+  # Updates year options based on selected disease
   observe({
     available_years <- all_diseases_combined %>%
       filter(disease == input$disease) %>%
@@ -229,7 +229,7 @@ server <- function(input, output, session) {
                       selected = "All")
   })
 
-  # Render the heatmap
+
   output$heatmapPlot <- renderPlot({
     # Filter data based on user inputs
     filtered_data <- all_diseases_combined %>%
@@ -240,14 +240,14 @@ server <- function(input, output, session) {
     map_data <- world_map %>%
       left_join(filtered_data, by = c("name" = "Country"))
 
-    # Generate heatmap
     ggplot(map_data) +
       geom_sf(aes(fill = total_cases), color = "white") +
       scale_fill_viridis_c(option = "plasma", na.value = "grey90") +
-      labs(title = paste("Disease Cases -", input$disease,
+      labs(title = paste("Heatmap of spread of ", input$disease,
                          if (input$year != "All") paste("(", input$year, ")") else ""),
            fill = "Total Cases") +
-      theme_minimal()
+      theme_minimal()+
+      theme(plot.title = element_text(hjust = 0.5))
   })
 }
 ```
@@ -256,4 +256,5 @@ Step 5.3: Run the App
 ```{r}
 shinyApp(ui = ui, server = server)
 ```
+
 

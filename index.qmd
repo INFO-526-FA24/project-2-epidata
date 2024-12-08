@@ -61,7 +61,7 @@ dengue_total <- dengue_preprocessed %>%
 
 dengue_combined <- bind_rows(dengue_aggregated, dengue_total)
 ```
-```
+
 
 Similarly, as above we have calculated yearly and cummulative cases for each disease and visualized the geographical spread of the data across all years and explored how this spread changes when filtered by specific years, providing insights into the temporal and geographical variations.
 

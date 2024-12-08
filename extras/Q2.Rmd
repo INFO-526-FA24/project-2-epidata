@@ -26,9 +26,9 @@ library(plotly)
 Step 1: Load all datasets
 
 ```{r}
-covid_data <- read_csv("datasets/COVID-19.csv")
-cholera_data <- read_csv("datasets/Cholera.csv")
-dengue_data <- read_excel("datasets/Dengue.xlsx")
+covid_data <- read_csv("../datasets/COVID-19.csv")
+cholera_data <- read_csv("../datasets/Cholera.csv")
+dengue_data <- read_excel("../datasets/Dengue.xlsx")
 ```
 
 Step2: Preprocess the data sets
@@ -216,7 +216,7 @@ Step 5.2: Define server logic
 
 ```{r}
 server <- function(input, output, session) {
-  
+
   # Update year options based on selected disease
   observe({
     available_years <- all_diseases_combined %>%
@@ -224,41 +224,30 @@ server <- function(input, output, session) {
       pull(year) %>%
       unique() %>%
       sort()
-    updateSelectInput(session, "year", 
-                      choices = c("All", available_years), 
+    updateSelectInput(session, "year",
+                      choices = c("All", available_years),
                       selected = "All")
   })
-  
+
   # Render the heatmap
-  output$heatmapPlot <- renderPlotly({ 
+  output$heatmapPlot <- renderPlot({
     # Filter data based on user inputs
     filtered_data <- all_diseases_combined %>%
       filter(disease == input$disease) %>%
       filter(year == input$year | input$year == "All")
-    
+
     # Merge with world map
     map_data <- world_map %>%
       left_join(filtered_data, by = c("name" = "Country"))
-    
+
     # Generate heatmap
-    plot <- ggplot(map_data) +
-      geom_sf(aes(
-        fill = total_cases, geometry = geometry,
-        text = paste0(
-          "Country: ", name, "<br>",
-          "Cases: ", scales::comma(total_cases)
-        )
-      ), color = "white") +
+    ggplot(map_data) +
+      geom_sf(aes(fill = total_cases), color = "white") +
       scale_fill_viridis_c(option = "plasma", na.value = "grey90") +
-      labs(
-        title = paste("Disease Cases -", input$disease,
-                      if (input$year != "All") paste("(", input$year, ")") else ""),
-        fill = "Total Cases"
-      ) +
+      labs(title = paste("Disease Cases -", input$disease,
+                         if (input$year != "All") paste("(", input$year, ")") else ""),
+           fill = "Total Cases") +
       theme_minimal()
-    
-    # Convert ggplot to plotly for hover interactivity
-    ggplotly(plot, tooltip = "text")
   })
 }
 ```

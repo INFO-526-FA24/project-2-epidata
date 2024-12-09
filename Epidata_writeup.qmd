@@ -176,13 +176,22 @@ By analyzing these heatmaps, policymakers and public health officials can identi
 
 ### Question 4: What are the differences in the disease manifestation among three pandemics, specifically in incubation period, mortality rate, and illness duration?
 
-## Conclusion
 
--   Add details.
+
+
+## Conclusion
+Different epidemics have different types of outbreaks. Dengue pandemics occurred seasonally, mostly late spring to early summer. This is likely due to the propogation of Aedes mosquitoes during these periods, which are responsible for the spread of the dengue pandemics. Cholera epidemics outbreaks are closely related to contamination of water sources, which is associated with years with heavy rainfall and flooding. COVID-19 had higher mortality rate at the early stage of pandemics than at the late stage, likely due to the vaccine access at the late stage; the total infected cases had spiked at the late stage, likely due to the end of quarantine measure.
+
+The monthly number of news articles related to COVID-19 and the month total cases of infected COVID-19 are inversely correlated. It can be reasonably inferred that the news of COVID-19 helped raise people's awareness of the pandemics, reminding people to sanitize frequently and reducing social contacts, which then indirectly reduced the number of total cases.
 
 Ultimately, this project demonstrates the power of data visualization in enhancing our understanding of global health challenges. By leveraging these insights, we can better prepare for and respond to future pandemics, ultimately improving the well-being of communities around the world.
 
+
 ## Future Directions
+We can emphasize on the time stamps of each pandemics where there were huge outbreaks, and research on the reasons behind them.
+
+We can also research on pandemics other than Cholera, Dengue and COVID-19, and compare the results to find the differences and similarities. Summarize the methods to try to provide suggestions on efficiently containing the spread of pandemics.
+
 
 ## References
 

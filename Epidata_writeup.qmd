@@ -31,19 +31,95 @@ The main goal of this project is to dive deeper into some significant pandemics 
 
 ## Datasets
 
-Three original datasets were used in this project: [Cholera](https://worldhealthorg.shinyapps.io/page10cholera_data/), [Dengue](https://worldhealthorg.shinyapps.io/dengue_global/), and [COVID-19](https://data.who.int/dashboards/covid19/data). The data wrangling steps for each task can be viewed in the *extras* folder. The variable information of the original datasets are displayed below.
+Three original datasets were used in this project: [Cholera](https://worldhealthorg.shinyapps.io/page10cholera_data/), [Dengue](https://worldhealthorg.shinyapps.io/dengue_global/), and [COVID-19](https://data.who.int/dashboards/covid19/data), all obtained from World Health Organization (WHO) website. The data wrangling steps for each task can be viewed in the *extras* folder. The variable information of the original datasets are displayed below.
+
+The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) includes annual country-level data on cases, mortality, and incidence rates from 2000 to 2023, with key columns such as Country, Region, Year, Total Cases, Deaths, and Case Fatality Rate (CFR). This dataset consists of 1,094 rows and 12 columns of records.
+
+| **Variable** | **Type** | **Description** |
+|-------------------|-------------------|----------------------------------|
+| Country | Character | Name of the country where cases are reported  |
+| GTFCC_Target_Country | Character | Indicates whether the country is a target of the Global Task Force on Cholera Control (GTFCC) |
+| Continent | Character | Continent to which the country belongs |
+| WHO_Region | Character | World Health Organization(WHO) regional classification of the country  |
+| Subregion | Character | Subregional classification within the WHO region |
+| Year | Numeric | Year in which the cases were recorded  |
+| Total_Cases | Numeric | Total number of cholera cases reported  |
+| Autochtonous_Cases | Numeric | Number of cholera cases originating within the country  |
+| Imported_Cases | Numeric | Number of cholera cases imported from other countries |
+| Deaths | Numeric | Number of deaths caused by cholera |
+| CFR | Numeric | Case Fatality rate, representing the percentage of cases that resulted in death |
+| Incidence_Rate_perMillion | Numeric | Cholera incidence rate per million people |
+
+The [Dengue Fever dataset](https://worldhealthorg.shinyapps.io/dengue_global/) contains monthly case data by country from January 1, 2010, to September 1, 2024, capturing metrics on severe cases, deaths, and fatality rates, and providing information across multiple dimensions, including date, region, country, and case severity. This dataset consists of 7,862 rows and 16 columns of records.
+
+| **Variable** | **Type** | **Description** |
+|-------------------|-------------------|----------------------------------|
+| date | Numeric | Date of entried record |
+| date_lab | Character | Date displayed in string |
+| who_region | Character | World Health Organisation (WHO) region code |
+| who_region_long | Character | Complete name of the WHO region |
+| country | Character | Name of the country |
+| iso3 | Character | This represents the ISO3 country code |
+| cases | Numeric | Total number of reported cases |
+| confirmed_cases | Numeric | Total number of confirmed cases |
+| severe_cases | Numeric | The number of newly reported several cases |
+| deaths | Numeric | The number of newly reported deaths |
+| cfr | Numeric | Case fatality ratio (CFR) is the ratio of the total number of deaths to the total number of cases in the same period |
+| prop_sev | Numeric | Proportion of severe cases is the ratio of the total number of severe cases to the total number of cases in the same period |
+| cfr_ci_lower | Numeric | The lower bound of confidence interval of case fatality ratio |
+| cfr_ci_upper | Numeric | The upper bound of confidence interval of fatality ratio |
+| prop_sev_ci_lower | Numeric | The lower bound of confidence interval of proportion of severe cases |
+| prop_sev_ci_upper | Numeric | The upper bound of confidence interval of proportion of severe cases |
+
+The [COVID-19 dataset](https://data.who.int/dashboards/covid19/data) provides daily reported cases and deaths at the country level from January 4, 2020, to September 22, 2024, offering a detailed timeline of the pandemic’s progression across regions. This dataset consists of 422,160 rows and 8 columns of records.
+
+|  |  |  |
+|-------------------|-------------------|----------------------------------|
+| **Variable** | **Type** | **Description** |
+| Date_reported | Character | The date on which the data was reported in YYYY-MM-DD format |
+| Country_code | Character | The ISO code of the country |
+| Country | Character | Full name of the country |
+| WHO_region | Character | WHO region classification of the country |
+| New_cases | Numeric | The number of new COVID-19 cases reported on the given date |
+| Cumulative_cases | Numeric | The total number of  COVID-19 cases reported up to  the given date |
+| New_deaths | Numeric | The number of new COVID-19 deaths reported on the given date |
+| Cumulative_deaths | Numeric | The total number of  COVID-19 deaths reported up to  the given date |
 
 ## Exploration
 
-### Q1.
+### Question 1: What are the number of total cases and death counts over time?
 
-### Q2. How did each pandemic spread geographically?
+#### Introduction
+
+We wanted to explore the trends of both total cases and death counts with time for all three pandemics, so we chose to use stream graphs to visualize the information, because stream graphs are useful and effective to visualize time series data of two different but related variables.
+
+#### Approach
+
+To process the data and get the information for this task, we aggregated each dataset grouping by time (by Year for Cholera dataset, and by Year-Month for both Dengue and COVID-19 datasets) and obtained the numbers of total cases and death counts for each time period. Then we used ggplot to plot the information, specifically using "geom_area".
+
+For all three graphs, the upper parts display the number of death counts with color red, the lower parts display the number of total cases with color blue, and the horizontal axes are the timelines. The start and the end values of the horizontal axes are different for each graph, because the original datasets collected the records from different time periods. The Cholera dataset contains information from the year 2000 to year 2023; the Dengue dataset contains information from January 1, 2010 to September 1, 2024; the COVID-19 dataset contains information from January 4, 2020 to September 22, 2024.
+
+Since the number of death counts are in small proportions to the number of total cases for all three datasets, the upper parts of the stream graphs are not as observable as the lower parts. Therefore, the annotation texts were added to the graphs, denoting the highest several death counts along with the corresponding time.
+
+#### Analysis
+
+The stream graphs produced in the project are displayed below. ![Cholera stream graph](writeup_plots/cholera_stream.png) ![Dengue stream graph](writeup_plots/dengue_stream.png) ![COVID-19 stream graph](writeup_plots/covid_stream.png)
+
+From the graphs above, we can observe that,
+
+-   For Cholera, the biggest outbreaks happened around the years 2017 and 2019. Before these two periods, 2011 was the first huge outbreak, which had 0.59 million total cases as well as having the highest death counts. The outbreaks of Cholera are highly related to the contamination of water sources, so the regions with poor sanitation during years with disastrous flooding are the main sites of Cholera infections.
+
+-   For Dengue, the biggest outbreaks happened in 2024, from January to June. The peak was in March 2024, having 2.74 million total cases in the month, and also having the most death counts. Dengue could be seasonal, because it’s mostly late spring to early summer that had the pandemic waves. It is highly likely due to the propagation of Aedes mosquitoes, which are responsible for the spread of the dengue pandemics.
+
+-   For COVID-19, December 2020 to August 2021 had horrendous amounts of deaths, and then gradually decreased to a lower level. It may be due to the prevalence of vaccine access and quarantine measures taken into effect around the world. The total cases, however, had spikes in January 2022 and December 2022. The reasons may include the end of quarantine for most regions.
+
+### Question 2: How did each pandemic spread geographically?
 
 #### Introduction
 
 Understanding the geographical spread of pandemics is crucial for effective public health interventions and global disease prevention. Cholera, dengue, and COVID-19, while differing in transmission methods, provide valuable insights into how infectious diseases propagate across regions.Analyzing the spatial patterns of these diseases highlights the factors influencing their transmission and informs strategies for future outbreak containment.
 
-#### Approach:
+#### Approach
 
 We pre-processed data for COVID-19, cholera, and dengue by renaming columns, standardizing dates, and ensuring consistent data types across datasets.Then aggregated case counts yearly and cumulatively for each country to generate combined datasets for each disease. As we are plotting our visualization on a world map from "rnaturalearth" package we ensured that country names were standardized and match the geographic boundaries in the world map data.
 
@@ -55,19 +131,19 @@ The heatmaps showcase the relative intensity of the outbreaks, with darker shade
 
 We have calculated yearly and cummulative cases for each disease and visualized the geographical spread of the data across all years and explored how this spread changes when filtered by specific years, providing insights into the temporal and geographical variations.
 
-![Heat Map of Cholera](Epidata_poster/task2_1.jpeg)
+![Heat Map of Cholera](writeup_plots/task2_1.jpeg)
 
 The heatmap of the cholera pandemic (Image 1) reveals a widespread distribution, with several hotspots across the globe. The disease appears to have a stronger presence in parts of Africa, Asia, and South America, potentially reflecting differences in infrastructure, access to clean water, and public health interventions.
 
-![Heat Map of Dengue](Epidata_poster/task2_2.jpeg)
+![Heat Map of Dengue](writeup_plots/task2_2.jpeg)
 
 The dengue heatmap (Image 2) shows a more concentrated pattern, with South America and parts of Southeast Asia experiencing higher case counts. This aligns with the known geographic range of the Aedes mosquito, the primary reason for dengue transmission.
 
-![Heat Map of COVID](Epidata_poster/task2_3.jpeg)
+![Heat Map of COVID](writeup_plots/task2_3.jpeg)
 
-The COVID-19 heatmap (Image 3) shows a true global pandemic, with intense outbreaks occurring across North America, Europe, and parts of Asia. The speckled distribution suggests the rapid and widespread transmission of the virus, highlighting the challenges of containing a highly contagious respiratory disease.
+The COVID-19 heatmap (the third image in this subsection) shows a true global pandemic, with intense outbreaks occurring across North America, Europe, and parts of Asia. The speckled distribution suggests the rapid and widespread transmission of the virus, highlighting the challenges of containing a highly contagious respiratory disease.
 
-Temporal Trends:
+#### Temporal Trends
 
 ##### COVID-19 (2020-2024)
 
@@ -96,9 +172,9 @@ The visualizations provide a valuable overview of how these pandemics have unfol
 
 By analyzing these heatmaps, policymakers and public health officials can identify areas of high risk and prioritize resource allocation and targeted interventions. Additionally, the insights gained from this analysis can inform the development of early warning systems, the enhancement of disease surveillance, and the creation of more resilient healthcare systems.
 
-### Q3
+### Question 3: Is there a correlation between the releases of news articles reporting COVID-19 and the spread speed of COVID-19?
 
-### Q4
+### Question 4: What are the differences in the disease manifestation among three pandemics, specifically in incubation period, mortality rate, and illness duration?
 
 ## Conclusion
 
@@ -107,3 +183,11 @@ By analyzing these heatmaps, policymakers and public health officials can identi
 Ultimately, this project demonstrates the power of data visualization in enhancing our understanding of global health challenges. By leveraging these insights, we can better prepare for and respond to future pandemics, ultimately improving the well-being of communities around the world.
 
 ## Future Directions
+
+## References
+
+-   Cholera dataset: https://worldhealthorg.shinyapps.io/page10cholera_data/
+
+-   Dengue dataset: https://worldhealthorg.shinyapps.io/dengue_global/
+
+-   COVID-19 dataset: https://data.who.int/dashboards/covid19/data

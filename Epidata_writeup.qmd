@@ -2,9 +2,9 @@
 title: "A Comparative Analysis of Historical Pandemics through Data Visualization"
 subtitle: "INFO 526 - Fall 2024 - Project 02"
 author: 
-  - name: "EpiData"
+  - name: "Epidata"
     affiliations:
-      - name: "School of Information, University of Arizona"
+      - name: "College of Information, University of Arizona"
 description: ""
 format:
    html:
@@ -17,88 +17,93 @@ execute:
   echo: false
 ---
 
-## Abstract: A Comparative Analysis of Historical Pandemics through Data Visualization
+## Introduction
 
+The main goal of this project is to dive deeper into some significant pandemics from human history, including Cholera, Dengue, and COVID-19. We are aware, to some extent, of the fact that these pandemics caused great loss and profoundly impacted human society in numerous ways, but we have no deeper understanding of them. Therefore, we want to use data visualizations to visually present and explore the similarities and differences among these pandemics or diseases that happened on a large scale in different time periods.
 
+## Background
 
+-   Cholera is an infectious disease that is spread by eating food or drinking water contaminated by already infected people. This disease typically has outbreaks in regions with poor sanitation.
 
-## Introduction:
+-   Dengue is a disease transmitted by Aedes mosquitoes that bite people infected with dengue virus. This disease is particularly rampant in tropical and subtropical regions.
 
+-   COVID-19 is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. The pandemics started in late 2019 and declared over in May 2023.
 
+## Datasets
 
-## Q1. 
+Three original datasets were used in this project: [Cholera](https://worldhealthorg.shinyapps.io/page10cholera_data/), [Dengue](https://worldhealthorg.shinyapps.io/dengue_global/), and [COVID-19](https://data.who.int/dashboards/covid19/data). The data wrangling steps for each task can be viewed in the *extras* folder. The variable information of the original datasets are displayed below.
 
-## Q2. How did each pandemic spread geographically?
+## Exploration
 
-### Introduction
+### Q1.
+
+### Q2. How did each pandemic spread geographically?
+
+#### Introduction
 
 Understanding the geographical spread of pandemics is crucial for effective public health interventions and global disease prevention. Cholera, dengue, and COVID-19, while differing in transmission methods, provide valuable insights into how infectious diseases propagate across regions.Analyzing the spatial patterns of these diseases highlights the factors influencing their transmission and informs strategies for future outbreak containment.
 
-### Approach:
+#### Approach:
 
-We pre-processed data for COVID-19, cholera, and dengue by renaming columns, standardizing dates, and ensuring consistent data types across datasets.Then aggregated case counts yearly and cumulatively for each country to generate combined datasets for each disease. 
-As we are plotting our visualization on a world map from "rnaturalearth" package we ensured that country names were standardized and match the geographic boundaries in the world map data.
+We pre-processed data for COVID-19, cholera, and dengue by renaming columns, standardizing dates, and ensuring consistent data types across datasets.Then aggregated case counts yearly and cumulatively for each country to generate combined datasets for each disease. As we are plotting our visualization on a world map from "rnaturalearth" package we ensured that country names were standardized and match the geographic boundaries in the world map data.
 
 All three datasets were merged into a single dataset, adding a column to identify the disease and its case counts. This combined dataset was joined with spatial data from Natural Earth to prepare for mapping. Using Shiny, we built an interactive UI that lets users select diseases and years, and a heatmap was created with ggplot2 to show-case distribution by region.
 
 The heatmaps showcase the relative intensity of the outbreaks, with darker shades indicating higher concentrations of reported cases. This allows for a quick and intuitive understanding of how the diseases have spread and which regions have been most heavily impacted.
 
-### Analysis
+#### Analysis
+
 We have calculated yearly and cummulative cases for each disease and visualized the geographical spread of the data across all years and explored how this spread changes when filtered by specific years, providing insights into the temporal and geographical variations.
 
 ![Heat Map of Cholera](Epidata_poster/task2_1.jpeg)
-
 
 The heatmap of the cholera pandemic (Image 1) reveals a widespread distribution, with several hotspots across the globe. The disease appears to have a stronger presence in parts of Africa, Asia, and South America, potentially reflecting differences in infrastructure, access to clean water, and public health interventions.
 
 ![Heat Map of Dengue](Epidata_poster/task2_2.jpeg)
 
-
 The dengue heatmap (Image 2) shows a more concentrated pattern, with South America and parts of Southeast Asia experiencing higher case counts. This aligns with the known geographic range of the Aedes mosquito, the primary reason for dengue transmission.
 
 ![Heat Map of COVID](Epidata_poster/task2_3.jpeg)
-
 
 The COVID-19 heatmap (Image 3) shows a true global pandemic, with intense outbreaks occurring across North America, Europe, and parts of Asia. The speckled distribution suggests the rapid and widespread transmission of the virus, highlighting the challenges of containing a highly contagious respiratory disease.
 
 Temporal Trends:
 
-### COVID-19 (2020-2024)
-- **Early 2020**: The **United States** and **China** were the first major countries to experience significant outbreaks with **the U.S.** becoming the global epicenter by the end of the year.
-- **2021**: Countries like **India** and **Brazil** faced severe surges. 
-- **2022-2023**: After vaccination rollouts, most **European** and **North American** countries saw a decline in cases. However, **China** saw a sharp spike in late 2022, 
-- **2024**: As COVID-19 cases generally decreased globally, countries like **China** and **Brazil** still had occasional surges
+##### COVID-19 (2020-2024)
 
-### Dengue (2010-2024)
-- **2010-2014**: Countries like **Brazil** onsistently reported dengue outbreaks.
-- **2015-2019**: There was an upward trend in cases in **Sri Lanka**, **Philippines**, and **Brazil**, with **Sri Lanka** experiencing its worst outbreak in 2017.
-- **2020-2021**: The pandemic lockdowns caused a temporary decline in cases globally.
-- **2023-2024**: The number of dengue cases reached an all-time high in countries like the **Philippines**, where over **400,000** cases were reported in a single year, indicating a sharp increase.
+-   **Early 2020**: The **United States** and **China** were the first major countries to experience significant outbreaks with **the U.S.** becoming the global epicenter by the end of the year.
+-   **2021**: Countries like **India** and **Brazil** faced severe surges.
+-   **2022-2023**: After vaccination rollouts, most **European** and **North American** countries saw a decline in cases. However, **China** saw a sharp spike in late 2022,
+-   **2024**: As COVID-19 cases generally decreased globally, countries like **China** and **Brazil** still had occasional surges
 
-### Cholera (2000-2024)
-- **2000-2010**: **Haiti**, **Bangladesh**, and **India** experienced recurring cholera outbreaks,
-- **2011-2015**: During this period, **Yemen** saw the emergence of new outbreaks, especially in **2014**. The disease remained endemic in parts of **South Asia** and **Africa**.
-- **2016-2020**: The largest outbreak occurred in **Yemen** from 2016 to 2018.
-- **2021-2024**: **Haiti** saw a resurgence in **2022-2023**, marking a new peak after years of decline.
+##### Dengue (2010-2024)
 
-### Discussion:
+-   **2010-2014**: Countries like **Brazil** onsistently reported dengue outbreaks.
+-   **2015-2019**: There was an upward trend in cases in **Sri Lanka**, **Philippines**, and **Brazil**, with **Sri Lanka** experiencing its worst outbreak in 2017.
+-   **2020-2021**: The pandemic lockdowns caused a temporary decline in cases globally.
+-   **2023-2024**: The number of dengue cases reached an all-time high in countries like the **Philippines**, where over **400,000** cases were reported in a single year, indicating a sharp increase.
+
+##### Cholera (2000-2024)
+
+-   **2000-2010**: **Haiti**, **Bangladesh**, and **India** experienced recurring cholera outbreaks,
+-   **2011-2015**: During this period, **Yemen** saw the emergence of new outbreaks, especially in **2014**. The disease remained endemic in parts of **South Asia** and **Africa**.
+-   **2016-2020**: The largest outbreak occurred in **Yemen** from 2016 to 2018.
+-   **2021-2024**: **Haiti** saw a resurgence in **2022-2023**, marking a new peak after years of decline.
+
+#### Discussion
 
 The visualizations provide a valuable overview of how these pandemics have unfolded on a global scale. The differences in the spatial patterns observed can be attributed to factors such as the modes of disease transmission, the availability of preventive measures, and the effectiveness of public health interventions.
 
 By analyzing these heatmaps, policymakers and public health officials can identify areas of high risk and prioritize resource allocation and targeted interventions. Additionally, the insights gained from this analysis can inform the development of early warning systems, the enhancement of disease surveillance, and the creation of more resilient healthcare systems.
 
-## Q3
+### Q3
 
-## Q4
-
-
+### Q4
 
 ## Conclusion
 
-- Add details.
+-   Add details.
 
 Ultimately, this project demonstrates the power of data visualization in enhancing our understanding of global health challenges. By leveraging these insights, we can better prepare for and respond to future pandemics, ultimately improving the well-being of communities around the world.
 
-
-
-
+## Future Directions

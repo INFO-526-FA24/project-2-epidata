@@ -37,14 +37,14 @@ The [Cholera dataset](https://worldhealthorg.shinyapps.io/page10cholera_data/) i
 
 | **Variable** | **Type** | **Description** |
 |-------------------|-------------------|----------------------------------|
-| Country | Character | Name of the country where cases are reported  |
+| Country | Character | Name of the country where cases are reported |
 | GTFCC_Target_Country | Character | Indicates whether the country is a target of the Global Task Force on Cholera Control (GTFCC) |
 | Continent | Character | Continent to which the country belongs |
-| WHO_Region | Character | World Health Organization(WHO) regional classification of the country  |
+| WHO_Region | Character | World Health Organization(WHO) regional classification of the country |
 | Subregion | Character | Subregional classification within the WHO region |
-| Year | Numeric | Year in which the cases were recorded  |
-| Total_Cases | Numeric | Total number of cholera cases reported  |
-| Autochtonous_Cases | Numeric | Number of cholera cases originating within the country  |
+| Year | Numeric | Year in which the cases were recorded |
+| Total_Cases | Numeric | Total number of cholera cases reported |
+| Autochtonous_Cases | Numeric | Number of cholera cases originating within the country |
 | Imported_Cases | Numeric | Number of cholera cases imported from other countries |
 | Deaths | Numeric | Number of deaths caused by cholera |
 | CFR | Numeric | Case Fatality rate, representing the percentage of cases that resulted in death |
@@ -178,22 +178,19 @@ By analyzing these heatmaps, policymakers and public health officials can identi
 
 ### Question 4: What are the differences in the disease manifestation among three pandemics, specifically in incubation period, mortality rate, and illness duration?
 
-
-
-
 ## Conclusion
+
 Different epidemics have different types of outbreaks. Dengue pandemics occurred seasonally, mostly late spring to early summer. This is likely due to the propogation of Aedes mosquitoes during these periods, which are responsible for the spread of the dengue pandemics. Cholera epidemics outbreaks are closely related to contamination of water sources, which is associated with years with heavy rainfall and flooding. COVID-19 had higher mortality rate at the early stage of pandemics than at the late stage, likely due to the vaccine access at the late stage; the total infected cases had spiked at the late stage, likely due to the end of quarantine measure.
 
 The monthly number of news articles related to COVID-19 and the month total cases of infected COVID-19 are inversely correlated. It can be reasonably inferred that the news of COVID-19 helped raise people's awareness of the pandemics, reminding people to sanitize frequently and reducing social contacts, which then indirectly reduced the number of total cases.
 
 Ultimately, this project demonstrates the power of data visualization in enhancing our understanding of global health challenges. By leveraging these insights, we can better prepare for and respond to future pandemics, ultimately improving the well-being of communities around the world.
 
-
 ## Future Directions
+
 We can emphasize on the time stamps of each pandemics where there were huge outbreaks, and research on the reasons behind them.
 
 We can also research on pandemics other than Cholera, Dengue and COVID-19, and compare the results to find the differences and similarities. Summarize the methods to try to provide suggestions on efficiently containing the spread of pandemics.
-
 
 ## References
 
@@ -202,3 +199,9 @@ We can also research on pandemics other than Cholera, Dengue and COVID-19, and c
 -   Dengue dataset: https://worldhealthorg.shinyapps.io/dengue_global/
 
 -   COVID-19 dataset: https://data.who.int/dashboards/covid19/data
+
+-   CNN news: [https://www.cnn.com/2020/09/19/europe/europe-second-wave-coronavirus-intl/index.html](https://www.cnn.com/2020/09/19/europe/europe-second-wave-coronavirus-intl/index.html/)
+
+-   CBSNEWS: <https://www.cbsnews.com/news/covid-cases-in-uk-surge-as-britain-and-other-european-nations-face-possible-second-lockdowns/>
+
+-   Samina Amin, Muhammad Ali Zeb, Hani Alshahrani, Mohammed Hamdi, Mohammad Alsulami, Asadullah Shaikh. Social Media-Based Surveillance Systems for Health Informatics Using Machine and Deep Learning Techniques: A Comprehensive Review and Open Challenges. CMES - Computer Modeling in Engineering and Sciences, Volume 139, Issue 2, 2024, Pages 1167-1202, ISSN 1526-1492, <https://doi.org/10.32604/cmes.2023.043921.> (<https://www.sciencedirect.com/science/article/pii/S152614922400198X)>

@@ -36,34 +36,15 @@ Understanding the geographical spread of pandemics is crucial for effective publ
 
 ### Approach:
 
-We pre-processed data for COVID-19, cholera, and dengue by renaming columns, standardizing dates, and ensuring consistent data types across datasets. aggregated case counts yearly and cumulatively for each country to generate combined datasets for each disease. Country names were then standardized to match the geographic boundaries in the world map data.
+We pre-processed data for COVID-19, cholera, and dengue by renaming columns, standardizing dates, and ensuring consistent data types across datasets.Then aggregated case counts yearly and cumulatively for each country to generate combined datasets for each disease. 
+As we are plotting our visualization on a world map from "rnaturalearth" package we ensured that country names were standardized and match the geographic boundaries in the world map data.
 
 All three datasets were merged into a single dataset, adding a column to identify the disease and its case counts. This combined dataset was joined with spatial data from Natural Earth to prepare for mapping. Using Shiny, we built an interactive UI that lets users select diseases and years, and a heatmap was created with ggplot2 to show-case distribution by region.
 
 The heatmaps showcase the relative intensity of the outbreaks, with darker shades indicating higher concentrations of reported cases. This allows for a quick and intuitive understanding of how the diseases have spread and which regions have been most heavily impacted.
 
 ### Analysis
-
-Code blocks 
-```{r}
-# Dengue Aggregation
-dengue_aggregated <- dengue_preprocessed %>%
-  mutate(year = as.character(year(record_date))) %>%                    
-  group_by(Country, year) %>%
-  summarize(total_cases = sum(dengue_cases, na.rm = TRUE)) %>%
-  ungroup() %>%
-  mutate(agg_type = "yearly")
-
-dengue_total <- dengue_preprocessed %>%
-  group_by(Country) %>%
-  summarize(total_cases = sum(dengue_cases, na.rm = TRUE)) %>%
-  mutate(year = "All", agg_type = "total")
-
-dengue_combined <- bind_rows(dengue_aggregated, dengue_total)
-```
-
-
-Similarly, as above we have calculated yearly and cummulative cases for each disease and visualized the geographical spread of the data across all years and explored how this spread changes when filtered by specific years, providing insights into the temporal and geographical variations.
+We have calculated yearly and cummulative cases for each disease and visualized the geographical spread of the data across all years and explored how this spread changes when filtered by specific years, providing insights into the temporal and geographical variations.
 
 ![Heat Map of Cholera](Epidata_poster/task2_1.jpeg)
 

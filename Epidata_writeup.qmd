@@ -143,6 +143,8 @@ The dengue heatmap (Image 2) shows a more concentrated pattern, with South Ameri
 
 The COVID-19 heatmap (the third image in this subsection) shows a true global pandemic, with intense outbreaks occurring across North America, Europe, and parts of Asia. The speckled distribution suggests the rapid and widespread transmission of the virus, highlighting the challenges of containing a highly contagious respiratory disease.
 
+Note: The text indicating places in the map has been added externally for easy analysis.
+
 #### Temporal Trends
 
 ##### COVID-19 (2020-2024)

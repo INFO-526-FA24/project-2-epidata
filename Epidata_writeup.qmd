@@ -186,7 +186,9 @@ From September 2020 onwards, the trend of the covid-19 outbreak could be charact
 
 The plot is displayed below.
 
-![Correlation between News Articles Releases and COVID-19 Spread](writeup_plots/task3.png) The gray bars and gray line display the number of monthly news articles about COVID-19, while its axis corresponds to the right y-axis. The red line represents the total cases of covid-19 and corresponds to the left y-axis. (Note: Two y-axes are used here, so please be careful to distinguish between them.)
+![Correlation between News Articles Releases and COVID-19 Spread](writeup_plots/task3.png) 
+
+The gray bars and gray line display the number of monthly news articles about COVID-19, while its axis corresponds to the right y-axis. The red line represents the total cases of covid-19 and corresponds to the left y-axis. (Note: Two y-axes are used here, so please be careful to distinguish between them.)
 
 #### Analysis
 
@@ -205,17 +207,27 @@ From the graph we can see that when the number of news increases significantly, 
 
 ### Question 4: What are the differences in the disease manifestation among three pandemics, specifically in incubation period, mortality rate, and illness duration?
 
-### Introduction:
+#### Introduction
 
-This task aims to explore the differences in the manifestation of Cholera, Dengue, and COVID-19 by analyzing their incubation periods, mortality rates, and illness durations. These metrics provide essential insights into the behavior of each disease, helping public health officials understand their spread, severity, and impact. By using data visualization, specifically radar charts, this analysis sheds light on how these pandemics differ in their epidemiological characteristics and emphasizes the need for tailored responses to mitigate their effects on societies.
+This task aims to explore the differences in the manifestation of Cholera, Dengue, and COVID-19 by analyzing their incubation periods, mortality rates, and illness durations. These metrics provide essential insights into the behavior of each disease, helping public health officials understand their spread, severity, and impact. By using data visualization, specifically radar charts, this analysis displays how these pandemics differ in their characteristics and emphasizes the need for responses to mitigate their effects on societies.
 
-### Approach:
+#### Approach
 
 To perform this analysis, data was sourced from the World Health Organization (WHO) datasets for Cholera, Dengue, and COVID-19. After cleaning and standardizing the data, key metrics were selected for comparison. The incubation period represents the time between exposure to the pathogen and the onset of symptoms. Mortality rate captures the proportion of cases resulting in death, and illness duration reflects the average recovery period for infected individuals. Radar charts were chosen as the visualization method for this task because they provide a clear and comparative representation of these metrics across the three pandemics. A combined radar chart was used to highlight the differences between all three diseases simultaneously, while individual charts were created to focus on the specific characteristics of each pandemic.
 
-### Analysis:
+The plots are displayed below.
+![Combined radar chart](writeup_plots/task4_1.png)
+![Individual radar chart, Cholera](writeup_plots/task4_2.png)
+![Individual radar chart, Dengue](writeup_plots/task4_3.png)
+![Individual radar chart, COVID-19](writeup_plots/task4_4.png)
+
+
+
+#### Analysis
 
 The radar charts reveal clear distinctions in the epidemiological features of the three pandemics. Cholera is characterized by a short incubation period of 2 days, the highest mortality rate of 5%, and the shortest illness duration of 7 days. These attributes underline Cholera’s rapid onset and high fatality, especially in areas with poor sanitation and healthcare infrastructure, necessitating immediate intervention during outbreaks. Dengue, on the other hand, has the longest incubation period of 7 days, which delays symptom onset and complicates early diagnosis and control efforts. Its mortality rate is the lowest at 0.1%, but severe cases can still lead to significant fatalities. The illness duration for Dengue is moderate at 10 days, placing a consistent burden on healthcare systems in endemic regions. COVID-19 stands out with a moderate incubation period of 5 days, a mortality rate of 2.5%, and the longest illness duration of 14 days. This prolonged illness duration highlights the sustained strain on healthcare resources and the extensive societal impact caused by its global spread.
+
+
 
 ## Conclusion
 
